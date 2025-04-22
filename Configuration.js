@@ -12,6 +12,8 @@ function getEndpoints(deviceAddress, endpoints)
   endpoints.addEndpoint("5", "Illumination sensor", endpointType.lightSensor);
   endpoints.addEndpoint("6", "TVOC sensor", endpointType.ppmConcentrationSensor, ppmConcentrationSensorSubType.voc);
   endpoints.addEndpoint("7", "Barometric Pressure", endpointType.pressureSensor);
+  endpoints.addEndpoint("8", "AQI", endpointType.airQualityIndexSensor);
+
 }
 
 function validateDeviceAddress(address, result)
@@ -27,11 +29,11 @@ function validateDeviceAddress(address, result)
 
 function updateDeviceUIRules(device, rules)
 {
-  rules.canCreateEndpoints = false;
+  rules.canCreateEndpoints = true;
 }
 
 function updateEndpointUIRules(endpoint, rules)
 {
-  rules.canDelete = false;
+  rules.canDelete = true;
   rules.canEditSubtype = false;
 }
