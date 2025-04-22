@@ -21,12 +21,12 @@ function parseUplink(device, payload)
     // Store Presence
     e = device.endpoints.byType(endpointType.iasSensor, iasEndpointSubType.motionSensor);
     if (e != null)
-        e.updateIASSensorStatus(parsed.activity);
+    e.updateIASSensorStatus(parsed.activity);
 
     // Store Illumination Sensor
-    e = device.endpoints.byType(endpointType.lightSensor);
+    e = device.endpoints.byType(endpointType.genericSensor);
     if (e != null)
-        e.updateLightSensorStatus(parsed.illumination);
+        e.updateGenericSensorStatus(parsed.illumination);
         
     // Store TVOC
     e = device.endpoints.byType(endpointType.ppmConcentrationSensor, ppmConcentrationSensorSubType.voc);
